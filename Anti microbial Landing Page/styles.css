@@ -1,0 +1,358 @@
+﻿:root {
+  --pink: #ff0f7e;
+  --pink-soft: #ff5fa8;
+  --white: #f7f7f7;
+  --muted: #d3d5dd;
+  --panel: rgba(10, 11, 16, 0.72);
+  --line: rgba(255, 255, 255, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Outfit", sans-serif;
+  color: var(--white);
+  position: relative;
+  overflow-x: hidden;
+  background: #050507;
+}
+
+.hero-bg {
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(108deg, rgba(4, 5, 8, 0.9) 10%, rgba(4, 5, 8, 0.3) 47%, rgba(4, 5, 8, 0.86) 95%),
+    radial-gradient(circle at 24% 74%, rgba(255, 255, 255, 0.18), transparent 42%),
+    radial-gradient(circle at 80% 48%, rgba(130, 130, 130, 0.3), transparent 44%),
+    linear-gradient(176deg, #040507 15%, #181b22 58%, #05060a 100%);
+  transform: scale(1.06);
+  filter: blur(0.8px);
+  z-index: -2;
+}
+
+.hero-bg::after {
+  content: "COVITRACKER";
+  position: absolute;
+  left: 23%;
+  top: 43%;
+  font-size: clamp(4rem, 12vw, 11rem);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.08);
+  letter-spacing: 0.05em;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.67) 0%, rgba(0, 0, 0, 0.5) 55%, rgba(0, 0, 0, 0.78) 100%);
+  z-index: -1;
+}
+
+.topbar {
+  width: min(1360px, 92vw);
+  margin: 0 auto;
+  padding: 1.1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  color: var(--pink);
+  font-size: clamp(1.55rem, 2.1vw, 2.3rem);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 1.45rem;
+}
+
+nav a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: clamp(0.82rem, 1vw, 1.02rem);
+  letter-spacing: 0.04em;
+  color: var(--pink);
+  font-weight: 400;
+  transition: opacity 0.22s ease;
+}
+
+nav a:hover {
+  opacity: 0.7;
+}
+
+nav a.active {
+  color: var(--pink-soft);
+}
+
+.hero-content {
+  width: min(1300px, 90vw);
+  margin: clamp(7rem, 21vh, 14rem) auto 0;
+  min-height: 62vh;
+}
+
+.hero-content h1 {
+  margin: 0;
+  max-width: 1130px;
+  font-size: clamp(2.4rem, 6.15vw, 7rem);
+  line-height: 1.03;
+  font-weight: 500;
+}
+
+.hero-content p {
+  margin-top: 1.5rem;
+  font-size: clamp(1.08rem, 1.95vw, 2.45rem);
+  max-width: 980px;
+  font-weight: 500;
+}
+
+.home-section,
+.page-content {
+  width: min(1100px, 90vw);
+  margin: 3rem auto 0;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 1.6rem;
+  backdrop-filter: blur(4px);
+}
+
+.page-content {
+  margin-bottom: 0;
+}
+
+.home-section h2,
+.page-content h1 {
+  margin: 0 0 0.9rem;
+  font-size: clamp(1.7rem, 3.7vw, 3rem);
+}
+
+.home-section p,
+.page-content p {
+  margin: 0;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.feature-wrap {
+  margin-top: 1.2rem;
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 1rem;
+}
+
+.feature-image {
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+}
+
+.feature-text {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.feature-text h3 {
+  margin: 0 0 0.6rem;
+  color: var(--pink-soft);
+}
+
+.mini-stats {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+.stat {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.7rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.stat strong {
+  display: block;
+  font-size: 1.2rem;
+  color: var(--pink-soft);
+}
+
+.image-section {
+  margin-top: 3rem;
+}
+
+.image-grid,
+.grid {
+  margin-top: 1.3rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.image-card,
+.card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.image-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.image-card .caption,
+.card .card-text {
+  padding: 0.9rem;
+}
+
+.image-card h3,
+.card h3 {
+  margin: 0 0 0.4rem;
+}
+
+.card {
+  padding: 1rem;
+}
+
+.card p,
+.image-card p {
+  color: var(--muted);
+}
+
+.contact-list {
+  margin-top: 1.3rem;
+  padding: 0;
+  list-style: none;
+}
+
+.contact-list li {
+  margin-bottom: 0.6rem;
+  color: var(--muted);
+}
+
+.site-footer {
+  width: min(1100px, 90vw);
+  margin: 2rem auto 2.5rem;
+  background: rgba(6, 7, 11, 0.86);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1rem 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.site-footer p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.site-footer .footer-brand {
+  color: var(--pink-soft);
+  font-weight: 600;
+}
+
+.menu-btn {
+  display: none;
+  border: 1px solid rgba(255, 15, 126, 0.6);
+  color: var(--pink);
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 7px;
+  padding: 0.45rem 0.78rem;
+  font: inherit;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+@media (max-width: 1050px) {
+  nav {
+    gap: 1rem;
+  }
+
+  nav a {
+    font-size: 0.86rem;
+  }
+
+  .hero-content {
+    min-height: 56vh;
+  }
+}
+
+@media (max-width: 760px) {
+  .topbar {
+    position: relative;
+  }
+
+  .menu-btn {
+    display: inline-block;
+  }
+
+  nav {
+    position: absolute;
+    top: calc(100% + 0.4rem);
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.9rem;
+    padding: 0.8rem;
+    border: 1px solid rgba(255, 15, 126, 0.35);
+    background: rgba(5, 5, 8, 0.95);
+    border-radius: 9px;
+    min-width: 165px;
+  }
+
+  nav.show {
+    display: flex;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+  }
+
+  .hero-content {
+    margin-top: 3.6rem;
+    min-height: auto;
+  }
+
+  .hero-content h1 {
+    line-height: 1.08;
+  }
+
+  .hero-content p {
+    margin-top: 0.95rem;
+  }
+
+  .feature-wrap,
+  .mini-stats,
+  .image-grid,
+  .grid,
+  .site-footer {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .image-card img {
+    height: 220px;
+  }
+}
