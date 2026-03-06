@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Precious Task Board</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>My To-Do Board</h1>
+    <p class="author">Plan Your Day, One Task at a Time</p>
+
+    <div class="add-box">
+      <input id="taskTitle" type="text" placeholder="Task title" maxlength="100" />
+      <textarea id="taskDescription" placeholder="Task description (optional)" maxlength="250"></textarea>
+      <button id="addBtn" type="button">Add Task</button>
+    </div>
+
+    <section class="board">
+      <div class="column" data-status="todo">
+        <div class="column-head">
+          <h2>To Do</h2>
+          <span id="todoCount">0</span>
+        </div>
+        <div id="todoList" class="list"></div>
+      </div>
+
+      <div class="column" data-status="done">
+        <div class="column-head">
+          <h2>Done</h2>
+          <span id="doneCount">0</span>
+        </div>
+        <div id="doneList" class="list"></div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <p class="footer-title">To-Do Task Board</p>
+      <p class="footer-sub">Plan small. Finish strong.</p>
+      <p class="footer-copy">Copyright <span id="year"></span> Nkurunziza Precious</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
